@@ -1,0 +1,600 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nasaimages/comic\ background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Responsive header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: rgba(39, 38, 38, 0.8);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    min-height: 70px;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#logo1,
+#logo2 {
+    width: 2.5rem;
+    height: auto;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+#hed1 {
+    font-family: 'Comic Neue', cursive;
+    color: bisque;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+    flex-grow: 1;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Responsive comic gallery layout */
+.comic-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+
+.comic-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.comic-panel:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.comic-panel img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.comic-panel:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive 3D flip card */
+.card {
+    width: 100%;
+    max-width: 90vw;
+    aspect-ratio: 16/10;
+    min-height: 300px;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 150rem;
+    background: none;
+    margin: 3rem auto;
+    position: relative;
+}
+
+.card-side {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-side.front {
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card-side.back {
+    align-items: flex-start;
+    text-align: left;
+    transform: rotateY(-180deg);
+    background-color: #4158D0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nasaimages/nyccomca.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card:hover .card-side.front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-side.back {
+    transform: rotateY(0deg);
+}
+
+/* Card content styling */
+#h1e {
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 4px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: left;
+}
+
+.card-side.back h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    text-align: left;
+}
+
+#h2e {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+#h3e {
+    font-size: 1.1rem;
+    color: cadetblue;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile First - Extra Small devices (phones, up to 576px) */
+@media (max-width: 575.98px) {
+    .header {
+        flex-direction: column;
+        padding: 0.5rem;
+        text-align: center;
+        min-height: 100px;
+        gap: 0.5rem;
+    }
+
+    .logo-container {
+        order: 1;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 1.8rem;
+        margin-right: 0.3rem;
+    }
+
+    #hed1 {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        order: 2;
+        text-align: center;
+        line-height: 1.1;
+    }
+
+    .comic-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+        padding-top: 120px;
+    }
+
+    .comic-panel {
+        border-radius: 10px;
+    }
+
+    .card {
+        max-width: 95vw;
+        min-height: 250px;
+        aspect-ratio: 4/3;
+        margin: 2rem auto;
+    }
+
+    .card-side {
+        padding: 1rem;
+    }
+
+    #h1e {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-align: left;
+    }
+
+    .card-side.back h2 {
+        font-size: 0.7rem;
+        margin-bottom: 0.8rem;
+        text-align: left;
+    }
+
+    #h3e {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    #h2e {
+        font-size: 0.7rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .header {
+        flex-direction: row;
+        padding: 0.75rem 1rem;
+        min-height: 80px;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 2rem;
+        margin-right: 0.4rem;
+    }
+
+    #hed1 {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .comic-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+        padding: 1.5rem 1rem;
+        padding-top: 100px;
+    }
+
+    .comic-panel {
+        border-radius: 12px;
+    }
+
+    .card {
+        max-width: 85vw;
+        min-height: 280px;
+        margin: 2.5rem auto;
+    }
+
+    .card-side {
+        padding: 1.2rem;
+    }
+
+    #h1e {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+        text-align: left;
+    }
+
+    .card-side.back h2 {
+        font-size: 0.8rem;
+        margin-bottom: 0.9rem;
+        text-align: left;
+    }
+
+    #h3e {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    #h2e {
+        font-size: 0.8rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header {
+        padding: 1rem 1.5rem;
+        min-height: 80px;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 2.5rem;
+        margin-right: 0.6rem;
+    }
+
+    #hed1 {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .comic-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+        padding-top: 100px;
+    }
+
+    .comic-panel {
+        border-radius: 15px;
+    }
+
+    .card {
+        max-width: 75vw;
+        min-height: 320px;
+        margin: 3rem auto;
+    }
+
+    .card-side {
+        padding: 1.5rem;
+    }
+
+    #h1e {
+        font-size: 1.8rem;
+        letter-spacing: 4px;
+        text-align: left;
+    }
+
+    .card-side.back h2 {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    #h3e {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    #h2e {
+        font-size: 0.85rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .header {
+        padding: 1rem 2rem;
+        min-height: 90px;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 3rem;
+        margin-right: 0.8rem;
+    }
+
+    #hed1 {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+    }
+
+    .comic-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 2.5rem 2rem;
+        padding-top: 110px;
+    }
+
+    .comic-panel {
+        border-radius: 15px;
+    }
+
+    .card {
+        max-width: 65vw;
+        min-height: 380px;
+        margin: 3.5rem auto;
+    }
+
+    .card-side {
+        padding: 2rem;
+    }
+
+    #h1e {
+        font-size: 2.2rem;
+        letter-spacing: 5px;
+        text-align: left;
+    }
+
+    .card-side.back h2 {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+        text-align: left;
+    }
+
+    #h3e {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+
+    #h2e {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .header {
+        padding: 1.2rem 2.5rem;
+        min-height: 100px;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 3.5rem;
+        margin-right: 1rem;
+    }
+
+    #hed1 {
+        font-size: 1.6rem;
+        letter-spacing: 4px;
+    }
+
+    .comic-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        padding: 3rem 2.5rem;
+        padding-top: 120px;
+    }
+
+    .comic-panel {
+        border-radius: 15px;
+    }
+
+    .card {
+        max-width: 55vw;
+        min-height: 420px;
+        max-height: 500px;
+        margin: 4rem auto;
+    }
+
+    .card-side {
+        padding: 2.5rem;
+    }
+
+    #h1e {
+        font-size: 2.5rem;
+        letter-spacing: 6px;
+        text-align: left;
+    }
+
+    .card-side.back h2 {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    #h3e {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+
+    #h2e {
+        font-size: 1rem;
+    }
+}
+
+/* Ultra-wide screens (1400px and up) */
+@media (min-width: 1400px) {
+    #hed1 {
+        font-size: 1.8rem;
+        letter-spacing: 5px;
+    }
+
+    .comic-gallery {
+        gap: 3rem;
+        padding: 3.5rem 3rem;
+        padding-top: 130px;
+    }
+
+    .card {
+        max-width: 50vw;
+        min-height: 450px;
+        max-height: 550px;
+        margin: 4.5rem auto;
+    }
+
+    #h1e {
+        font-size: 3rem;
+        letter-spacing: 8px;
+        text-align: left;
+    }
+
+    .card-side.back h2 {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    #h3e {
+        font-size: 1.3rem;
+        letter-spacing: 4px;
+    }
+
+    #h2e {
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsive footer */
+footer {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Responsive scroll to top button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    background-color: #FF5252;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.scrolled #scrollTopBtn {
+    display: block;
+}
+
+@media (max-width: 575.98px) {
+    #scrollTopBtn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    footer {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell us a Climate story!</title>
+    <link rel="icon" href="nasaimages/nova strikers logo.jpg" style="border-radius: 50%;">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Background video -->
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="nasaimages/front page video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Header with logos and title -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="nasaimages/NOVA_Strikers logo removed bg.png" alt="logo" class="logo" id="logo1">
+            <img src="nasaimages/nasa_logo-removed bg.png" alt="nasalogo" class="logo" id="logo2">
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+  var logoElement = document.getElementById('logo1');
+  if (logoElement) {
+    logoElement.addEventListener('click', function() {
+      window.location.reload(); 
+    });
+  } else {
+    console.log("Element with id 'logo' not found.");
+  }
+}); </script>
+        <h1 class="title">TELL US A CLIMATE STORY!</h1>
+    </header>
+
+    <!-- Main content container -->
+    <main class="main-content">
+        <div class="box">
+            <h2>Let's know about a climate story</h2>
+            <a href="nasaclimate2.html" target="_self">
+                <button class="button" id="but">Let's Go</button>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>

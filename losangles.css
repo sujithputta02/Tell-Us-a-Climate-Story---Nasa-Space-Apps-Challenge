@@ -1,0 +1,680 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nasaimages/losangeles.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Responsive header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(39, 38, 38, 0.8);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    min-height: 60px;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#logo1, #logo2 {
+    width: 2.5rem;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#pin {
+    width: 1.5rem;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+#hed1 {
+    color: bisque;
+    font-size: 1.2rem;
+    text-align: right;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Main content container */
+.container {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    margin-top: 80px;
+    box-sizing: border-box;
+}
+
+/* Responsive 3D flip card */
+.card {
+    width: 100%;
+    max-width: 90vw;
+    aspect-ratio: 16/10;
+    min-height: 250px;
+    max-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 150rem;
+    background: none;
+    margin: 0 auto;
+    position: relative;
+}
+
+.card-side {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-side.front {
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+}
+
+.card-side.back {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.card-side.back {
+    transform: rotateY(-180deg);
+    background-color: #4158D0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nasaimages/download\ \(2\).jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.card-side.front {
+    background: linear-gradient(135deg, #8B5CF6 0%, #3B0764 100%);
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+}
+
+.card:hover .card-side.front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-side.back {
+    transform: rotateY(0deg);
+}
+
+/* Card content styling */
+#h1e {
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: left;
+}
+
+.card-side.back h1 {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.card-side.back h3 {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* Responsive button */
+.button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(125, 151, 190);
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 120px;
+    text-align: center;
+    align-self: flex-start;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: rgb(97, 127, 224);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    background-color: rgb(240, 70, 70);
+    transform: translateY(0);
+}
+
+/* Mobile First - Extra Small devices (phones, up to 576px) */
+@media (max-width: 575.98px) {
+    .header {
+        flex-direction: column;
+        padding: 0.75rem 0.5rem;
+        text-align: center;
+        min-height: 80px;
+    }
+
+    .logo-container {
+        margin-bottom: 0.5rem;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 1.8rem;
+        margin-right: 0.3rem;
+    }
+
+    .head {
+        justify-content: center;
+    }
+
+    #pin {
+        width: 1.2rem;
+        margin-right: 0.3rem;
+    }
+
+    #hed1 {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .container {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 100px);
+        margin-top: 100px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        max-width: 95vw;
+        min-height: 200px;
+        aspect-ratio: 4/3;
+        margin: 0 auto;
+    }
+
+    .card-side {
+        padding: 0.75rem;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 1rem;
+    }
+
+    #h1e {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        text-align: left;
+    }
+
+    .card-side.back h1 {
+        font-size: 0.7rem;
+        margin-bottom: 0.75rem;
+        text-align: left;
+    }
+
+    .card-side.back h3 {
+        font-size: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .button {
+        font-size: 0.7rem;
+        padding: 0.6rem 1.2rem;
+        min-width: 100px;
+        align-self: flex-start;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .header {
+        flex-direction: row;
+        padding: 0.75rem 1rem;
+        min-height: 70px;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 2rem;
+        margin-right: 0.4rem;
+    }
+
+    #pin {
+        width: 1.3rem;
+        margin-right: 0.4rem;
+    }
+
+    #hed1 {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .container {
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 90px);
+        margin-top: 90px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        max-width: 85vw;
+        min-height: 220px;
+        margin: 0 auto;
+    }
+
+    .card-side {
+        padding: 1rem;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+        padding-top: 1.2rem;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 1.2rem;
+    }
+
+    #h1e {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-align: left;
+    }
+
+    .card-side.back h1 {
+        font-size: 0.8rem;
+        margin-bottom: 0.85rem;
+        text-align: left;
+    }
+
+    .card-side.back h3 {
+        font-size: 0.7rem;
+        margin-bottom: 1.2rem;
+        text-align: left;
+    }
+
+    .button {
+        font-size: 0.75rem;
+        padding: 0.7rem 1.3rem;
+        min-width: 110px;
+        align-self: flex-start;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header {
+        padding: 1rem 1.5rem;
+        min-height: 70px;
+    }
+    
+    #logo1, #logo2 {
+        width: 2.5rem;
+        margin-right: 0.6rem;
+    }
+    
+    #pin {
+        width: 1.5rem;
+        margin-right: 0.5rem;
+    }
+    
+    #hed1 {
+        font-size: 1.3rem;
+        letter-spacing: 3px;
+    }
+
+    .container {
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 90px);
+        margin-top: 90px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        max-width: 75vw;
+        min-height: 280px;
+        margin: 0 auto;
+    }
+
+    .card-side {
+        padding: 1.5rem;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+        padding-top: 2rem;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 1.5rem;
+    }
+
+    #h1e {
+        font-size: 1.6rem;
+        letter-spacing: 4px;
+        text-align: left;
+    }
+
+    .card-side.back h1 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .card-side.back h3 {
+        font-size: 0.85rem;
+        margin-bottom: 1.4rem;
+        text-align: left;
+    }
+
+    .button {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.6rem;
+        min-width: 140px;
+        align-self: flex-start;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .header {
+        padding: 1rem 2rem;
+        min-height: 80px;
+    }
+    
+    #logo1, #logo2 {
+        width: 3rem;
+        margin-right: 0.8rem;
+    }
+    
+    #pin {
+        width: 1.8rem;
+        margin-right: 0.6rem;
+    }
+    
+    #hed1 {
+        font-size: 1.6rem;
+        letter-spacing: 5px;
+    }
+
+    .container {
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 100px);
+        margin-top: 100px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        max-width: 65vw;
+        min-height: 320px;
+        margin: 0 auto;
+    }
+
+    .card-side {
+        padding: 2rem;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+        padding-top: 2.5rem;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+
+    #h1e {
+        font-size: 2rem;
+        letter-spacing: 6px;
+        text-align: left;
+    }
+
+    .card-side.back h1 {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+        text-align: left;
+    }
+
+    .card-side.back h3 {
+        font-size: 0.95rem;
+        margin-bottom: 1.6rem;
+        text-align: left;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 0.9rem 1.8rem;
+        min-width: 160px;
+        align-self: flex-start;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .header {
+        padding: 1.2rem 2.5rem;
+        min-height: 90px;
+    }
+    
+    #logo1, #logo2 {
+        width: 3.5rem;
+        margin-right: 1rem;
+    }
+    
+    #pin {
+        width: 2rem;
+        margin-right: 0.8rem;
+    }
+    
+    #hed1 {
+        font-size: 2rem;
+        letter-spacing: 8px;
+    }
+
+    .container {
+        padding: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 110px);
+        margin-top: 110px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        max-width: 55vw;
+        min-height: 380px;
+        max-height: 450px;
+        margin: 0 auto;
+    }
+
+    .card-side {
+        padding: 2.5rem;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+        padding-top: 3rem;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 2.5rem;
+    }
+
+    #h1e {
+        font-size: 2.5rem;
+        letter-spacing: 8px;
+        text-align: left;
+    }
+
+    .card-side.back h1 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    .card-side.back h3 {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    .button {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        min-width: 180px;
+        align-self: flex-start;
+    }
+}
+
+/* Ultra-wide screens (1400px and up) */
+@media (min-width: 1400px) {
+    #hed1 {
+        font-size: 2.2rem;
+        letter-spacing: 10px;
+    }
+
+    .card {
+        max-width: 50vw;
+        min-height: 400px;
+        max-height: 500px;
+        margin: 0 auto;
+    }
+
+    .card-side.front {
+        padding-top: 3.5rem;
+    }
+
+    .card-side.back {
+        padding-top: 3rem;
+    }
+
+    #h1e {
+        font-size: 3rem;
+        letter-spacing: 10px;
+        text-align: left;
+    }
+
+    .card-side.back h1 {
+        font-size: 1.3rem;
+        text-align: left;
+    }
+
+    .card-side.back h3 {
+        font-size: 1.1rem;
+        text-align: left;
+    }
+
+    .button {
+        font-size: 1.3rem;
+        padding: 1.1rem 2.2rem;
+        min-width: 200px;
+        align-self: flex-start;
+    }
+}

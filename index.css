@@ -1,0 +1,414 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Responsive background video */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Responsive header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgba(39, 38, 38, 0.8);
+    padding: 0.5rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    flex-wrap: wrap;
+    min-height: 60px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 2rem;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.title {
+    color: bisque;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-align: center;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Main content container */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* Responsive content box */
+.box {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nasaimages/box\ background\ image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    max-width: 90vw;
+    min-height: 250px;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.box:hover {
+    background-image: url('nasaimages/box\ background\ image.png');
+    transform: scale(1.02);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+/* Remove underline from button link */
+a {
+    text-decoration: none;
+}
+
+/* Responsive button */
+.button {
+    background-color: greenyellow;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+#but {
+    font-size: 1.2rem;
+}
+
+.button:hover {
+    background-color: rgb(191, 219, 30);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    transform: translateY(0);
+}
+
+/* Mobile First - Extra Small devices (phones, up to 576px) */
+@media (max-width: 575.98px) {
+    .header {
+        flex-direction: column;
+        padding: 0.75rem 0.5rem;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .logo-container {
+        margin-bottom: 0.5rem;
+    }
+
+    .logo {
+        width: 1.8rem;
+        margin-right: 0.3rem;
+    }
+
+    .title {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        padding: 0;
+    }
+
+    .main-content {
+        padding: 0.5rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box {
+        max-width: 95vw;
+        min-height: 200px;
+        padding: 0.75rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        min-width: 100px;
+        min-height: 45px;
+    }
+
+    #but {
+        font-size: 1rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .header {
+        flex-direction: row;
+        padding: 0.75rem 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        width: 2.2rem;
+        margin-right: 0.4rem;
+    }
+
+    .title {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+    }
+
+    .main-content {
+        padding: 1rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box {
+        max-width: 85vw;
+        min-height: 220px;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .button {
+        padding: 0.7rem 1.4rem;
+        font-size: 1rem;
+        min-width: 130px;
+        min-height: 50px;
+    }
+
+    #but {
+        font-size: 1.1rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header {
+        padding: 1rem 1.5rem;
+    }
+
+    .logo {
+        width: 2.5rem;
+        margin-right: 0.6rem;
+    }
+
+    .title {
+        font-size: 1.4rem;
+        letter-spacing: 5px;
+    }
+
+    .main-content {
+        padding: 1.5rem;
+        padding-top: 80px;
+    }
+
+    .box {
+        max-width: 70vw;
+        min-height: 280px;
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .button {
+        padding: 0.8rem 1.6rem;
+        font-size: 1.1rem;
+        min-width: 150px;
+        min-height: 60px;
+    }
+
+    #but {
+        font-size: 1.3rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .header {
+        padding: 1rem 2rem;
+    }
+
+    .logo {
+        width: 3rem;
+        margin-right: 0.8rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        letter-spacing: 7px;
+    }
+
+    .main-content {
+        padding: 2rem;
+        padding-top: 60px;
+    }
+
+    .box {
+        max-width: 60vw;
+        min-height: 320px;
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .button {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        min-width: 170px;
+        min-height: 70px;
+    }
+
+    #but {
+        font-size: 1.5rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .header {
+        padding: 1.2rem 2.5rem;
+    }
+
+    .logo {
+        width: 3.5rem;
+        margin-right: 1rem;
+    }
+
+    .title {
+        font-size: 2.2rem;
+        letter-spacing: 10px;
+    }
+
+    .main-content {
+        padding: 2.5rem;
+        padding-top: 40px;
+    }
+
+    .box {
+        max-width: 50vw;
+        min-height: 400px;
+        padding: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .button {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.3rem;
+        min-width: 200px;
+        min-height: 80px;
+    }
+
+    #but {
+        font-size: 1.8rem;
+    }
+}
+
+/* Ultra-wide screens (1400px and up) */
+@media (min-width: 1400px) {
+    .title {
+        font-size: 2.5rem;
+        letter-spacing: 12px;
+    }
+
+    .box {
+        max-width: 45vw;
+        min-height: 450px;
+    }
+
+    h2 {
+        font-size: 3.2rem;
+    }
+
+    .button {
+        font-size: 1.4rem;
+        min-width: 220px;
+        min-height: 90px;
+    }
+
+    #but {
+        font-size: 2rem;
+    }
+}

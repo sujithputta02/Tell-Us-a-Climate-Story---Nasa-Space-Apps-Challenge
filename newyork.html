@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Know About a New York Story</title>
+    <link rel="icon" href="nasaimages/nova strikers logo.jpg">
+    <link rel="stylesheet" href="NEWYORK.CSS">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="container" id="container">
+    <header class="header">
+        <div class="logo-container">
+            <img src="nasaimages/NOVA_Strikers logo removed bg.png" alt="logo" id="logo1">
+            <img src="nasaimages/nasa_logo-removed bg.png" alt="nasalogo" id="logo2">
+        </div>
+        <div class="head">
+            <img src="nasaimages/location pin removed.png" alt="pin" id="pin">
+            <h1 id="hed1">NEW YORK</h1>
+        </div>
+    </header>
+    <main class="container">
+        <div class="card">
+            <div class="card-side front">
+                <div>
+                    <h2 id="h1e">OVERVIEW<br>OF<br>THE<br>STORY</h2>
+                </div>
+            </div>
+            <div class="card-side back">
+                <div>
+                    <h1>This story is about how New York City, a place known for its energy and resilience, is facing the real impacts of climate change. Once predictable weather patterns have become erratic with extreme heatwaves and severe snowstorms.</h1>
+                    <h3>Tap the Button to know more about it in terms of comics...</h3>
+                    <a href="newyorkcomic.html" target="_self">
+                        <button class="button">
+                            NEW YORK COMICS
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Navigate to home page on logo click
+        document.addEventListener('DOMContentLoaded', function() {
+            var logoElement = document.getElementById('logo1');
+            if (logoElement) {
+                logoElement.addEventListener('click', function() {
+                    window.location.href='nasaclimate2.html'; 
+                });
+            } else {
+                console.log("Element with id 'logo1' not found.");
+            }
+        });
+    </script>
+</body>
+</html>
+

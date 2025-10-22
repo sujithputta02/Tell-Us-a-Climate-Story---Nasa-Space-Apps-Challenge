@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Know About an Indianapolis Story</title>
+    <link rel="icon" href="nasaimages/nova strikers logo.jpg">
+    <link rel="stylesheet" href="indiana.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="container" id="container">
+    <header class="header">
+        <div class="logo-container">
+            <img src="nasaimages/NOVA_Strikers logo removed bg.png" alt="logo" id="logo1">
+            <img src="nasaimages/nasa_logo-removed bg.png" alt="nasalogo" id="logo2">
+        </div>
+        <div class="head">
+            <img src="nasaimages/location pin removed.png" alt="pin" id="pin">
+            <h1 id="hed1">INDIANAPOLIS</h1>
+        </div>
+    </header>
+    <main class="container">
+        <div class="card">
+            <div class="card-side front">
+                <div>
+                    <h2 id="h1e">OVERVIEW<br>OF<br>THE<br>STORY</h2>
+                </div>
+            </div>
+            <div class="card-side back">
+                <div>
+                    <h1>The Story is all about the Carbon dioxide and Methane Concentrations from Indianapolis flux
+                        experiment held in Indianapolis, Indiana, United States. Here the comic story, which helps us to
+                        understand about the Flux experiment.</h1>
+                    <h3>Tap the Button to know about the flux experiment in terms of comics...</h3>
+                    <a href="indianacomics.html" target="_self">
+                        <button class="button">
+                            Indy Climate Chronicles Comic
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Navigate to home page on logo click
+        document.addEventListener('DOMContentLoaded', function () {
+            var logoElement = document.getElementById('logo1');
+            if (logoElement) {
+                logoElement.addEventListener('click', function () {
+                    window.location.href = 'nasaclimate2.html';
+                });
+            } else {
+                console.log("Element with id 'logo1' not found.");
+            }
+        });
+    </script>
+</body>
+
+</html>

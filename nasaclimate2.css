@@ -1,0 +1,477 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nasaimages/2ndpage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Responsive header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(39, 38, 38, 0.8);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    min-height: 60px;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#logo1,
+#logo2 {
+    width: 2.5rem;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+#hed1 {
+    color: bisque;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 2px;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Main content container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 1rem;
+    padding-top: 80px;
+}
+
+.comtainer {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#he1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Responsive city boxes */
+.box {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    width: 100%;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 120px;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Box backgrounds with blur effect */
+#box1,
+#box2,
+#box3 {
+    position: relative;
+}
+
+#box1::before,
+#box2::before,
+#box3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+#box1::before {
+    background-image: url('nasaimages/indiana (6x1.5).jpg');
+}
+
+#box2::before {
+    background-image: url('nasaimages/box 2 background.jpg');
+}
+
+#box3::before {
+    background-image: url('nasaimages/box 3 backgroud.jpg');
+}
+
+/* Hover effects */
+#box1:hover::before,
+#box2:hover::before,
+#box3:hover::before {
+    filter: blur(0);
+    transform: scale(1.05);
+}
+
+#box1:hover::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nasaimages/indiana (6x1.5).jpg');
+}
+
+#box2:hover::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nasaimages/box 2 background.jpg');
+}
+
+#box3:hover::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nasaimages/box 3 backgroud.jpg');
+}
+
+#box1:hover,
+#box2:hover,
+#box3:hover {
+    transform: scale(1.02);
+}
+
+/* Text styling */
+#box1>*,
+#box2>*,
+#box3>* {
+    position: relative;
+    z-index: 1;
+}
+
+#he2,
+#he3,
+#he4 {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.de1 {
+    font-size: 0.8rem;
+    color: white;
+    margin-top: 0.25rem;
+    opacity: 0.9;
+}
+
+.page {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Remove center tags styling */
+center {
+    display: block;
+    width: 100%;
+}
+
+/* Mobile First - Extra Small devices (phones, up to 576px) */
+@media (max-width: 575.98px) {
+    .header {
+        flex-direction: column;
+        padding: 0.75rem 0.5rem;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin-bottom: 0.5rem;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 1.8rem;
+        margin-right: 0.3rem;
+    }
+
+    #hed1 {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        padding-right: 0;
+    }
+
+    .container {
+        padding-top: 120px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    #he1 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .box {
+        max-width: 95vw;
+        min-height: 100px;
+        margin-bottom: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    #he2,
+    #he3,
+    #he4 {
+        font-size: 1rem;
+    }
+
+    .de1 {
+        font-size: 0.7rem;
+        margin-top: 0.2rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .header {
+        flex-direction: row;
+        padding: 0.75rem 1rem;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 2rem;
+        margin-right: 0.4rem;
+    }
+
+    #hed1 {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        padding-right: 0;
+    }
+
+    .container {
+        padding-top: 100px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #he1 {
+        font-size: 1.4rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .box {
+        max-width: 90vw;
+        min-height: 110px;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    #he2,
+    #he3,
+    #he4 {
+        font-size: 1.1rem;
+    }
+
+    .de1 {
+        font-size: 0.75rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header {
+        padding: 1rem 1.5rem;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 2.5rem;
+        margin-right: 0.6rem;
+    }
+
+    #hed1 {
+        font-size: 1.2rem;
+        letter-spacing: 4px;
+        padding-right: 0;
+    }
+
+    .container {
+        padding-top: 90px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    #he1 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .box {
+        max-width: 75vw;
+        min-height: 130px;
+        margin-bottom: 1.25rem;
+        padding: 1.25rem;
+    }
+
+    #he2,
+    #he3,
+    #he4 {
+        font-size: 1.4rem;
+    }
+
+    .de1 {
+        font-size: 0.9rem;
+        margin-top: 0.3rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .header {
+        padding: 1rem 2rem;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 3rem;
+        margin-right: 0.8rem;
+    }
+
+    #hed1 {
+        font-size: 1.5rem;
+        letter-spacing: 6px;
+        padding-right: 0;
+    }
+
+    .container {
+        padding-top: 80px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    #he1 {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .box {
+        max-width: 60vw;
+        min-height: 140px;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    #he2,
+    #he3,
+    #he4 {
+        font-size: 1.6rem;
+    }
+
+    .de1 {
+        font-size: 1rem;
+        margin-top: 0.4rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .header {
+        padding: 1.2rem 2.5rem;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 3.5rem;
+        margin-right: 1rem;
+    }
+
+    #hed1 {
+        font-size: 1.8rem;
+        letter-spacing: 8px;
+        padding-right: 0;
+    }
+
+    .container {
+        padding-top: 70px;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    #he1 {
+        font-size: 2.6rem;
+        margin-bottom: 3rem;
+    }
+
+    .box {
+        max-width: 50vw;
+        min-height: 150px;
+        margin-bottom: 2rem;
+        padding: 2rem;
+    }
+
+    #he2,
+    #he3,
+    #he4 {
+        font-size: 1.8rem;
+    }
+
+    .de1 {
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Ultra-wide screens (1400px and up) */
+@media (min-width: 1400px) {
+    #hed1 {
+        font-size: 2rem;
+        letter-spacing: 10px;
+    }
+
+    #he1 {
+        font-size: 3rem;
+    }
+
+    .box {
+        max-width: 45vw;
+        min-height: 160px;
+    }
+
+    #he2,
+    #he3,
+    #he4 {
+        font-size: 2rem;
+    }
+
+    .de1 {
+        font-size: 1.2rem;
+    }
+}

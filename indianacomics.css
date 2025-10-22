@@ -1,0 +1,716 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./nasaimages/comic background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Responsive header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(39, 38, 38, 0.8);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    min-height: 60px;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#logo1,
+#logo2 {
+    width: 2.5rem;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+#hed1 {
+    font-family: 'Comic Neue', cursive;
+    color: bisque;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 2px;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Main content container */
+.main-content {
+    padding-top: 80px;
+}
+
+/* Responsive Comic Gallery Layout */
+.comic-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Info cards section */
+.info-cards {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.comic-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    aspect-ratio: 3/4;
+}
+
+.comic-panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.comic-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Responsive 3D flip cards */
+.card {
+    display: block;
+    margin: 0 auto;
+    perspective: 150rem;
+    width: 100%;
+    max-width: 90vw;
+    min-height: 350px;
+    height: auto;
+    position: relative;
+    isolation: isolate;
+}
+
+.card-side {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.card-side.back {
+    transform: rotateY(-180deg);
+    background-color: #4158D0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./nasaimages/co2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: flex-start;
+    z-index: 2;
+}
+
+.card-side.front {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+}
+
+.card:hover .card-side.front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-side.back {
+    transform: rotateY(0deg);
+}
+
+/* Responsive text styling */
+#h1e,
+#h4e {
+    font-size: 1.4rem;
+    margin: 0;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+#h2e {
+    color: white;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+}
+
+#h3e {
+    font-size: 1rem;
+    color: cadetblue;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive image grid */
+.img {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.img img:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.source-text {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: white;
+    font-family: 'Comic Neue', cursive;
+}
+
+/* Mobile First - Extra Small devices (phones, up to 576px) */
+@media (max-width: 575.98px) {
+    .header {
+        flex-direction: column;
+        padding: 0.75rem 0.5rem;
+        text-align: center;
+        min-height: 80px;
+    }
+
+    .logo-container {
+        margin-bottom: 0.5rem;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 1.8rem;
+        margin-right: 0.3rem;
+    }
+
+    #hed1 {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .comic-gallery {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        margin-top: 100px;
+    }
+
+    .comic-panel {
+        aspect-ratio: 4/5;
+    }
+
+    .card {
+        max-width: 95vw;
+        min-height: 600px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .card-side {
+        padding: 1rem;
+        height: auto;
+        min-height: 600px;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 0.8rem;
+        overflow-y: auto;
+    }
+
+    #h1e,
+    #h4e {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+
+    #h2e {
+        font-size: 0.7rem;
+        margin-bottom: 0.6rem;
+        line-height: 1.5;
+    }
+
+    #h3e {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.4rem;
+    }
+
+    .img {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.4rem;
+        padding: 0.8rem;
+    }
+
+    .img img {
+        aspect-ratio: 3/2;
+        object-fit: contain;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .source-text {
+        font-size: 0.6rem;
+        margin-top: 0.5rem;
+    }
+
+    .info-cards {
+        gap: 1.5rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .header {
+        flex-direction: row;
+        padding: 0.75rem 1rem;
+        min-height: 70px;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 2rem;
+        margin-right: 0.4rem;
+    }
+
+    #hed1 {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .comic-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+        margin-top: 90px;
+    }
+
+    .card {
+        max-width: 90vw;
+        min-height: 520px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .card-side {
+        padding: 1.2rem;
+        height: auto;
+        min-height: 520px;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 1rem;
+        overflow-y: auto;
+    }
+
+    #h1e,
+    #h4e {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+
+    #h2e {
+        font-size: 0.75rem;
+        margin-bottom: 0.7rem;
+        line-height: 1.5;
+    }
+
+    #h3e {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.4rem;
+    }
+
+    .img {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .img img {
+        aspect-ratio: 4/3;
+        object-fit: contain;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .source-text {
+        font-size: 0.7rem;
+        margin-top: 0.75rem;
+    }
+
+    .info-cards {
+        gap: 1.8rem;
+        padding: 0.8rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header {
+        padding: 1rem 1.5rem;
+        min-height: 70px;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 2.5rem;
+        margin-right: 0.6rem;
+    }
+
+    #hed1 {
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+    }
+
+    .comic-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        padding: 1.5rem;
+        margin-top: 90px;
+    }
+
+    .card {
+        max-width: 750px;
+        min-height: 420px;
+        aspect-ratio: 3/2;
+        margin: 0 auto;
+    }
+
+    .card-side {
+        padding: 1.8rem;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 1.5rem;
+    }
+
+    #h1e,
+    #h4e {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+
+    #h2e {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+    }
+
+    #h3e {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .img {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .source-text {
+        font-size: 0.8rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .header {
+        padding: 1rem 2rem;
+        min-height: 80px;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 3rem;
+        margin-right: 0.8rem;
+    }
+
+    #hed1 {
+        font-size: 1.6rem;
+        letter-spacing: 3px;
+    }
+
+    .comic-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 2rem;
+        margin-top: 100px;
+    }
+
+    .card {
+        max-width: 800px;
+        min-height: 480px;
+        aspect-ratio: 5/3;
+        margin: 0 auto;
+    }
+
+    .card-side {
+        padding: 2rem;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 1.8rem;
+    }
+
+    #h1e,
+    #h4e {
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+    }
+
+    #h2e {
+        font-size: 0.9rem;
+        margin-bottom: 0.9rem;
+        line-height: 1.5;
+    }
+
+    #h3e {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    .img {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        padding: 1.25rem;
+    }
+
+    .source-text {
+        font-size: 0.9rem;
+        margin-top: 1.25rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .header {
+        padding: 1.2rem 2.5rem;
+        min-height: 90px;
+    }
+
+    #logo1,
+    #logo2 {
+        width: 3.5rem;
+        margin-right: 1rem;
+    }
+
+    #hed1 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .comic-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 2.5rem;
+        margin-top: 110px;
+    }
+
+    .card {
+        max-width: 900px;
+        min-height: 500px;
+        aspect-ratio: 5/3;
+        margin: 0 auto;
+    }
+
+    .card-side {
+        padding: 2.5rem;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+
+    #h1e,
+    #h4e {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    #h2e {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    #h3e {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .img {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .source-text {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+    }
+}
+
+/* Ultra-wide screens (1400px and up) */
+@media (min-width: 1400px) {
+    #hed1 {
+        font-size: 2.2rem;
+        letter-spacing: 5px;
+    }
+
+    .comic-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        padding: 3rem;
+    }
+
+    .card {
+        max-width: 1000px;
+        min-height: 550px;
+        aspect-ratio: 5/3;
+        margin: 0 auto;
+    }
+
+    .card-side.front {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+    }
+
+    .card-side.back {
+        align-items: flex-start;
+        text-align: left;
+        justify-content: flex-start;
+        padding-top: 2.5rem;
+    }
+
+    #h1e,
+    #h4e {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    #h2e {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    #h3e {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+
+    .source-text {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell us a Climate Story!</title>
+    <link rel="icon" href="nasaimages/nova strikers logo.jpg">
+    <link rel="stylesheet" href="nasaclimate2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body class="container" id="container">
+    <header class="header">
+        <div class="logo-container">
+            <img src="nasaimages/NOVA_Strikers logo removed bg.png" alt="logo" id="logo1">
+            <img src="nasaimages/nasa_logo-removed bg.png" alt="nasalogo" id="logo2">
+        </div>
+        <h1 id="hed1">TELL US A CLIMATE STORY !</h1>
+    </header>
+
+    <main class="container">
+        <div class="comtainer">
+            <h1 id="he1">Let's know the climate Story in U.S</h1>
+        </div>
+        
+        <div class="box" id="box1">
+            <a href="indiana.html" target="_self" class="page">
+                <div>
+                    <h2 id="he2">INDIANAPOLIS</h2>
+                    <h4 class="de1">Indianapolis, Indiana, U.S</h4>
+                </div>
+            </a>
+        </div>
+        
+        <div class="box" id="box2">
+            <a href="losangles.html" target="_self" class="page">
+                <div>
+                    <h2 id="he3">LOS ANGELES</h2>
+                    <h4 class="de1">Los Angeles, California, U.S</h4>
+                </div>
+            </a>
+        </div>
+        
+        <div class="box" id="box3">
+            <a href="newyork.html" target="_self" class="page">
+                <div>
+                    <h2 id="he4">NEW YORK CITY</h2>
+                    <h4 class="de1">New York City, New York, U.S</h4>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        // Navigate to home page on logo click
+        document.addEventListener('DOMContentLoaded', function() {
+            var logoElement = document.getElementById('logo1');
+            if (logoElement) {
+                logoElement.addEventListener('click', function() {
+                    window.location.href='index.html'; 
+                });
+            } else {
+                console.log("Element with id 'logo1' not found.");
+            }
+        });
+    </script>
+</body>
+</html>
